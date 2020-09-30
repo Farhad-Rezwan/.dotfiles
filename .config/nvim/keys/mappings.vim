@@ -1,4 +1,7 @@
 " Leader is set to SPACE
+" set leader key
+let g:mapleader = "\<Space>"
+
 
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
@@ -9,10 +12,12 @@ let g:netrw_winsize = 20
 "let g:ctrlp_cmd = 'CtrlP'
 "let g:ctrlp_user_command = 'find %s -type f' 
 
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <Leader>h :wincmd h<CR>
+" Better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nmap <unique> <c-r> <Plug>NetrwRefresh
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 20<CR>
 nnoremap <Leader>ps :Rg<SPACE>

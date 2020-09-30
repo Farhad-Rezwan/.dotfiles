@@ -128,3 +128,28 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 "---------------------------------------------------
+"
+"
+" ---------------- recommended by coc -------------------------
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+set cmdheight=2                         " More space for displaying messages (Recommended by coc)
+set hidden                              " (TextEdit might fail if hidden is not set(COC))
+set updatetime=300                      " Faster completion (recommended by coc)
+set nobackup                            " This is recommended by coc
+set nowritebackup                       " This is recommended by coc
+" ------------------------------------------------------------
+"
+"
+"
+"

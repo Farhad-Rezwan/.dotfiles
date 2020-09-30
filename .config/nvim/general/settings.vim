@@ -1,6 +1,3 @@
-" set leader key
-let g:mapleader = "\<Space>"
-
 syntax enable                           " Enables syntax highlighing
 
 set guicursor=
@@ -17,12 +14,10 @@ set scrolloff=8
 set noshowmatch
 set noshowmode
 set wrap
-set hidden                              " (TextEdit might fail if hidden is not set(COC))
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
-set ruler              			            " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages (Recommended by coc)
+set ruler              			        " Show the cursor position all the time
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
@@ -40,9 +35,6 @@ set laststatus=0                        " Always display the status line
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
-set updatetime=300                      " Faster completion (recommended by coc)
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
@@ -52,22 +44,4 @@ cmap w!! w !sudo tee %
 
 
 
-" ---------------- recommended by coc -------------------------
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" ------------------------------------------------------------
-"
-"
-"
-"
 let g:vim_markdown_folding_disabled = 1
