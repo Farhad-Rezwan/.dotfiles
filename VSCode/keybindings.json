@@ -1,21 +1,5 @@
 [
   {
-    "key": "shift+ctrl+e",
-    "command": "actions.findWithSelection"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-actions.findWithSelection"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "shift+ctrl+e",
-    "command": "-workbench.view.explorer"
-  },
-  {
     "key": "r",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
@@ -197,5 +181,55 @@
     "key": "shift+delete",
     "command": "-deleteFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode != 'insert'"
+  },
+  {
+    "key": "shift+cmd+0",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "shift+cmd+0",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode != 'insert'"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    "key": "cmd+0",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+cmd+-",
+    "command": "workbench.action.toggleEditorGroupLayout"
+  },
+  {
+    "key": "alt+cmd+0",
+    "command": "-workbench.action.toggleEditorGroupLayout"
+  },
+  {
+    "key": "alt+cmd+0",
+    "command": "workbench.action.toggleSidebarPosition"
   }
 ]
