@@ -46,4 +46,5 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+
 call plug#end()

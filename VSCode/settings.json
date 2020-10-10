@@ -91,7 +91,7 @@
       ]
     }
   },
-  "workbench.colorTheme": "Abyss",
+  "workbench.colorTheme": "Quiet Light",
   "terminal.integrated.copyOnSelection": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.fontFamily": "OverpassMono Nerd Font",
