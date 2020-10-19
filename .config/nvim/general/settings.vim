@@ -36,6 +36,7 @@ set cursorline                          " Enable highlighting of the current lin
 set background=dark                     " tell vim what the background color looks like
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
+set clipboard=unnamedplus               " Copy paste between vim and everything else
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 

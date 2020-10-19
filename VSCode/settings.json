@@ -95,5 +95,5 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.fontFamily": "OverpassMono Nerd Font",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "left"
 }
