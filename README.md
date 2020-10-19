@@ -4,3 +4,4 @@ new line:wq
 Newest line
 
 onelasttime
+done
