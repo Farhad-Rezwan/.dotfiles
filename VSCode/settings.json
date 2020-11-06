@@ -19,7 +19,7 @@
   "editor.minimap.enabled": false,
   "workbench.activityBar.visible": true,
   "window.zoomLevel": 1,
-  "python.pythonPath": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+  "python.pythonPath": "/usr/local/opt/python@3.9/bin/python3.9",
   "editor.tokenColorCustomizations": {
     "[One Dark Pro]": {
       "textMateRules": [
@@ -91,7 +91,7 @@
       ]
     }
   },
-  "workbench.colorTheme": "Quiet Light",
+  "workbench.colorTheme": "Solarized Light",
   "terminal.integrated.copyOnSelection": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.fontFamily": "OverpassMono Nerd Font",

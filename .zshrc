@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/farhadullahrezwan/.oh-my-zsh"
+export ZSH="/Users/rezwan/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -61,6 +62,7 @@ ZSH_THEME="spaceship"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
+#
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
@@ -138,7 +140,7 @@ bindkey -s '^o' 'lfcd\n'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Personal aliases
+# #Personal aliases
 alias kanban="taskell"
 alias v="nvim"
 alias vi="nvim"
