@@ -14,6 +14,7 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " Color Theme
     Plug 'morhetz/gruvbox'
+    Plug 'dracula/vim', { 'as': 'dracula' }
     " Completion
     Plug 'neoclide/coc.nvim'
     " fzf
@@ -45,6 +46,14 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+    Plug 'metakirby5/codi.vim'
+    " Pandoc and latex-live-preview
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'xuhdev/vim-latex-live-preview'
+
+
+
 
 
 call plug#end()
