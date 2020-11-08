@@ -52,8 +52,9 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'xuhdev/vim-latex-live-preview'
 
-
-
-
+    " Debugger plugins
+    "
+    Plug 'puremourning/vimspector'
+    Plug 'szw/vim-maximizer'
 
 call plug#end()

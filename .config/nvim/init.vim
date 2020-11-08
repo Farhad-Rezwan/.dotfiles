@@ -16,4 +16,5 @@ else
     source $HOME/.config/nvim/unmanaged/kanvim.vim
     source $HOME/.config/nvim/modules/codi.vim
     source $HOME/.config/nvim/modules/markdown.vim
+    source $HOME/.config/nvim/modules/spector.vim
 endif

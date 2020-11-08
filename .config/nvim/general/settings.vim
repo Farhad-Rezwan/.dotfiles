@@ -50,18 +50,6 @@ let g:vim_markdown_folding_disabled = 1
 "
 "
 " ------- Latex
-let g:livepreview_previewer = 'open -a Preview'
+let g:livepreview_previewer = 'evince'
 
 autocmd Filetype tex setl updatetime=1
-
-
-
-
-
-
-
-
-
-
-
-
