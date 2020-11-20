@@ -48,13 +48,19 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
     Plug 'metakirby5/codi.vim'
-    " Pandoc and latex-live-preview
-    Plug 'vim-pandoc/vim-pandoc'
-    Plug 'xuhdev/vim-latex-live-preview'
 
     " Debugger plugins
     "
     Plug 'puremourning/vimspector'
     Plug 'szw/vim-maximizer'
+
+    " Firevim for browser 69 for brave
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(69) } }
+    
+    " Git integration 
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
 
 call plug#end()

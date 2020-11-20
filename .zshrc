@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/bin:$PATH"
 
@@ -74,6 +74,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -85,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -100,21 +101,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-SPACESHIP_PROMPT_ADD_NEWLINE="false"
-SPACESHIP_CHAR_SYMBOL=" \uf0e7" 
-SPACESHIP_CHAR_PREFIX=" \uf296"
-SPACESHIP_CHAR_SUFFIX=(" ") 
-SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
+SPACESHIP_DIR_SHOW="false"
+SPACESHIP_CHAR_SYMBOL="\uf408  "
+SPACESHIP_CHAR_COLOR_SUCCESS="blue"
 SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="true"
+SPACESHIP_USER_SHOW="false"
+SPACESHIP_VI_MODE_SHOW="false"
 
 alias ls=colorls — light — sort-dirs — report
 alias lc=colorls — tree — light
-
-
-
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -123,6 +118,28 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# #Personal aliases
+alias kanban="taskell"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias nivm="nvim"
+alias vnim="nvim"
+
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home"
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+SPACESHIP_PROMPT_PREFIXES_SHOW="false"
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
@@ -135,13 +152,8 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+bindkey -s '^k' 'open -a "Finder" .\n'
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
-# #Personal aliases
-alias kanban="taskell"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
