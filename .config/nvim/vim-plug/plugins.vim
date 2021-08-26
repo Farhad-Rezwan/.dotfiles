@@ -6,8 +6,7 @@ if empty(glob('~/.nvimLoads/autoload/plug.vim'))
   "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.nvimLoads/autoload/plugged')
-
+call plug#begin('~/.nvimLoads/autoload/plugged') 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " Auto pairs for '(' '[' '{'
@@ -25,7 +24,7 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     " all about the markdown
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
     " table mode
     Plug 'dhruvasagar/vim-table-mode'
@@ -43,7 +42,7 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     " Prettier
     " post install (yarn install | npm install) then load plugin only for editing supported files
     Plug 'prettier/vim-prettier', {
-    \ 'do': 'yarn install',
+    \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
@@ -54,13 +53,18 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     Plug 'puremourning/vimspector'
     Plug 'szw/vim-maximizer'
 
-    " Firevim for browser 69 for brave
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(69) } }
-    
     " Git integration 
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
+
+    " Plugin for latex
+    Plug 'lervag/vimtex'
+
+
+    " Vim-solidity
+    Plug 'tomlion/vim-solidity'
+    
 
 call plug#end()

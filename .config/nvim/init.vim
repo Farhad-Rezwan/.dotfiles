@@ -2,6 +2,9 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/paths.vim
 
+" move these to the coc 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 if exists('g:vscode')
     " VS Code extension 
     source $HOME/.config/nvim/vscode/settings.vim

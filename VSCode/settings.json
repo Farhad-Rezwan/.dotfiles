@@ -18,7 +18,6 @@
   "terminal.external.osxExec": "iTerm.app",
   "editor.minimap.enabled": false,
   "workbench.activityBar.visible": true,
-  "window.zoomLevel": 1,
   "python.pythonPath": "/usr/local/opt/python@3.9/bin/python3.9",
   "editor.tokenColorCustomizations": {
     "[One Dark Pro]": {
@@ -95,5 +94,21 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.fontFamily": "OverpassMono Nerd Font",
-  "workbench.sideBar.location": "left"
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "typescript.preferences.quoteStyle": "double",
+  "javascript.preferences.quoteStyle": "double"
 }
