@@ -90,7 +90,7 @@
       ]
     }
   },
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Default Light+",
   "terminal.integrated.copyOnSelection": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.fontFamily": "OverpassMono Nerd Font",

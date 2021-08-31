@@ -48,20 +48,12 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
 
     Plug 'metakirby5/codi.vim'
 
-    " Debugger plugins
-    "
-    Plug 'puremourning/vimspector'
-    Plug 'szw/vim-maximizer'
 
     " Git integration 
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
-
-    " Plugin for latex
-    Plug 'lervag/vimtex'
-
 
     " Vim-solidity
     Plug 'tomlion/vim-solidity'
