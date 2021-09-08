@@ -95,18 +95,6 @@ bindkey -s '^x' 'pkill -f tmux'
 
 
 
-# NVM settings
-export NVM_DIR="/Users/rezwan/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-
-
-# Java and Android Studio 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
-
-
-
 # Layer 2
 # exports zksync libraries
 # export PATH=/Users/rezwan/Desktop/CivicLedger/learning/testingLayer2/zinc-0.2.3-macos/znc
@@ -118,8 +106,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 
 
-# Node and NVM
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Python and PYENV
 eval "$(pyenv init --path)"
+
+# Java Version - 8
+export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+export PATH=/Users/rezwan/.daml/bin:/usr/local/opt/openjdk@8/bin:/Users/rezwan/.pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+fpath=(~/.daml/zsh /Users/rezwan/.oh-my-zsh/plugins/git /Users/rezwan/.oh-my-zsh/functions /Users/rezwan/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions)
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
