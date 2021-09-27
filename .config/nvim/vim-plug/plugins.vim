@@ -29,6 +29,9 @@ call plug#begin('~/.nvimLoads/autoload/plugged')
     " table mode
     Plug 'dhruvasagar/vim-table-mode'
 
+    " maximizer
+    Plug 'szw/vim-maximizer'
+
     " To Do
     Plug 'vuciv/vim-bujo'
 

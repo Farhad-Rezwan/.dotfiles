@@ -91,7 +91,7 @@ bindkey -s '^k' 'open -a "Finder" .\n'
 # TO open cv and coverletter
 
 bindkey -s '^s' 'open -n -a "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome" --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security' 
-bindkey -s '^x' 'pkill -f tmux'
+bindkey -s '^x' 'tmux list-sessions | awk '\''BEGIN{FS=":"}{print $1}'\'' | xargs -n 1 tmux kill-session -t'
 
 
 
