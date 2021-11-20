@@ -9,3 +9,5 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true}) --
 
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
+
+map('v', 'f', ':format', {noremap = true, silent = true})
