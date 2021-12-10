@@ -7,11 +7,12 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias kanban="taskell"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-alias nivm="nvim"
-alias vnim="nvim"
+alias v="nvim -u ~/.config/nvim/init.lua"
+alias vi="nvim -u ~/.config/nvim/init.lua"
+alias vim="nvim -u ~/.config/nvim/init.lua"
+alias nivm="nvim -u ~/.config/nvim/init.lua"
+alias nvim="nvim -u ~/.config/nvim/init.lua"
+alias vnim="nvim -u ~/.config/nvim/init.lua"
 
 
 # Color and prompt
@@ -61,14 +62,15 @@ lfcd () {
 bindkey -s '^o' 'lfcd\n'
 bindkey -s '^k' 'open -a "Finder" .\n'
 
-# TO open cv and coverletter
-
+# TO open google sequre mode, close tumxes, run adonis, cv and coverletter
 bindkey -s '^s' 'open -n -a "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome" --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security' 
 bindkey -s '^x' 'tmux list-sessions | awk '\''BEGIN{FS=":"}{print $1}'\'' | xargs -n 1 tmux kill-session -t'
 bindkey -s '^r' 'nvm use 14 && SSL_MODE=local npm run dev'
 bindkey -s '^w' 'cd /Users/rezwan/Projects.nosync/civicLedger/waterLedger'
 bindkey -s '^a' 'cd /Users/rezwan/Projects.nosync/civicLedger/auditor'
 bindkey -s '^n' 'cd /Users/rezwan/.config/nvim'
+bindkey -s '^p' 'pwd | pbcopy'
+bindkey -s '^u' 'cd /Users/rezwan/Projects.nosync/Personal'
 
 
 
