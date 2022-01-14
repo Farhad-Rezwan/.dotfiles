@@ -80,3 +80,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
 alias luamake=/Users/rezwan/.config/nvim/lua-language-server/3rd/luamake/luamake
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH="$HOME/.daml/bin:$PATH"
