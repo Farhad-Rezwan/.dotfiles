@@ -2,12 +2,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {'rose-pine/neovim', config = "vim.cmd('colorscheme rose-pine')"}
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ":TSUpdate",
-    event = "BufWinEnter",
-    config = "require('treesitter-config')"
-  }
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = ":TSUpdate",
+  --   event = "BufWinEnter",
+  --   config = "require('treesitter-config')"
+  -- }
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
@@ -59,9 +59,9 @@ return require('packer').startup(function(use)
   }
   use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
   use {"terrortylor/nvim-comment", config = "require('comment-config')"}
-  use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
-  use {'williamboman/nvim-lsp-installer'}
-  use {'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')"}
+  -- use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
+  -- use {'williamboman/nvim-lsp-installer'}
+  -- use {'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')"}
   use {"folke/zen-mode.nvim", config = 'require("zen-mode-config")'}
   use {"folke/twilight.nvim", config = "require('twilight-config')"}
 end)

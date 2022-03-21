@@ -1,18 +1,19 @@
 local null_ls = require('null-ls')
 
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
+local sources = {
+  formatting.prettier,
+  diagnostics.codespell,
+  formatting.prettier.with {
+    extra_filetypes = {"solidity"},
+    extra_args = {"--no-semi", "--single-quote", "--jsx-single-quote"}
+  }, formatting.stylua, formatting.codespell.with({filetypes = {'markdown'}}), diagnostics.codespell
+}
 
 null_ls.setup({
   sources = {
-    formatting.prettier.with {
-      extra_filetypes = {"toml", "solidity"},
-      extra_args = {"--no-semi", "--single-quote", "--jsx-single-quote"}
-    }, formatting.stylua, formatting.lua_format.with({
-      extra_args = {
-        '--no-keep-simple-function-one-line', '--no-break-after-operator', '--column-limit=100',
-        '--break-after-table-lb', '--indent-width=2'
-      }
-    }), formatting.codespell.with({filetypes = {'markdown'}})
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then

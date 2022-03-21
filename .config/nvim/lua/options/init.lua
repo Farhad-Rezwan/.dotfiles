@@ -35,3 +35,4 @@ vim.bo.autoindent = true --
 vim.o.expandtab = true --
 vim.bo.expandtab = true --
 -- vim.o.clipboard = "pbcopy"
+vim.g.netrw_banner = 0 -- Hide banner
