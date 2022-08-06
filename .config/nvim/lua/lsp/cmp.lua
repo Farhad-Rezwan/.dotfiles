@@ -59,7 +59,6 @@ cmp.setup({
     -- For ultisnips user.
     -- { name = 'ultisnips' },
     {name = 'buffer'}
-  },
-  formatting = {format = lspkind.cmp_format({with_text = true, maxwidth = 50})}
+  }
+  -- formatting = {format = lspkind.cmp_format({with_text = true, maxwidth = 50})}
 })
-

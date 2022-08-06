@@ -60,14 +60,15 @@ bindkey -s '^k' 'open -a "Finder" .\n'
 # TO open google sequre mode, close tumxes, run adonis, cv and coverletter
 bindkey -s '^s' 'open -n -a "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome" --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security' 
 bindkey -s '^x' 'tmux list-sessions | awk '\''BEGIN{FS=":"}{print $1}'\'' | xargs -n 1 tmux kill-session -t'
-bindkey -s '^r' 'nvm use 14 && SSL_MODE=local npm run dev'
+bindkey -s '^r' 'nvm use 16 && SSL_MODE=local npm run dev'
 bindkey -s '^w' 'cd /Users/rezwan/Projects.nosync/civicLedger/waterLedger'
 bindkey -s '^a' 'cd /Users/rezwan/Projects.nosync/civicLedger/auditor'
 bindkey -s '^n' 'cd /Users/rezwan/.config/nvim'
 bindkey -s '^p' 'pwd | pbcopy'
 bindkey -s '^u' 'cd /Users/rezwan/Projects.nosync/Personal'
 bindkey -s '^q' 'cat /Users/rezwan/.ssh/password.txt | pbcopy \nsudo shutdown -h now\n'
-bindkey -s '^e' 'nvm use 14 && node ace migration:rollback && node ace migration:run && node ace db:seed -i'
+bindkey -s '^e' 'nvm use 16 && node ace migration:rollback && node ace migration:run && node ace db:seed -i'
+bindkey -s '^t' 'docker-compose stop && docker-compose down && docker-compose build && docker-compose up'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -84,3 +85,4 @@ eval "$(pyenv init --path)"
 alias luamake=/Users/rezwan/.config/nvim/lua-language-server/3rd/luamake/luamake
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="$HOME/.daml/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
