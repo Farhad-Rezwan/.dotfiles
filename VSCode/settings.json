@@ -89,7 +89,7 @@
       ]
     }
   },
-  "workbench.colorTheme": "Abyss",
+  "workbench.colorTheme": "Default Light+",
   "terminal.integrated.copyOnSelection": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.fontFamily": "OverpassMono Nerd Font",
@@ -105,14 +105,19 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "window.zoomLevel": 1,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "typescript.preferences.quoteStyle": "double",
   "javascript.preferences.quoteStyle": "double",
   "editor.maxTokenizationLineLength": 2000000,
+<<<<<<< HEAD
   "gitlens.defaultDateShortFormat": null,
   "security.workspace.trust.untrustedFiles": "open",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.guides.indentation": false,
   "window.zoomLevel": 1
+=======
+  "gitlens.defaultDateShortFormat": null
+>>>>>>> parent of fd93746 (Changes before resetting)
 }
