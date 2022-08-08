@@ -66,12 +66,8 @@ bindkey -s '^a' 'cd /Users/rezwan/Projects.nosync/civicLedger/auditor'
 bindkey -s '^n' 'cd /Users/rezwan/.config/nvim'
 bindkey -s '^p' 'pwd | pbcopy'
 bindkey -s '^u' 'cd /Users/rezwan/Projects.nosync/Personal'
-<<<<<<< HEAD
-bindkey -s '^q' 'cat /Users/rezwan/.ssh/password.txt | pbcopy \nsudo shutdown -h now\n'
 bindkey -s '^e' 'nvm use 16 && node ace migration:rollback && node ace migration:run && node ace db:seed -i'
 bindkey -s '^t' 'docker-compose stop && docker-compose down && docker-compose build && docker-compose up'
-=======
->>>>>>> parent of fd93746 (Changes before resetting)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
