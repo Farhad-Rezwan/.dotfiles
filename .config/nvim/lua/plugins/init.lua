@@ -11,13 +11,19 @@ return require('packer').startup({
   function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
+    -- Theme
     use {'rose-pine/neovim', config = "vim.cmd('colorscheme rose-pine')"}
+
+    -- highlighting
     use {
       'nvim-treesitter/nvim-treesitter',
       run = ":TSUpdate",
       event = "BufWinEnter",
       config = "require('treesitter-config')"
     }
+
+    -- 
     use {
       'tamton-aquib/staline.nvim',
       requires = {'kyazdani42/nvim-web-devicons', opt = true},
@@ -75,6 +81,8 @@ return require('packer').startup({
     use {"folke/zen-mode.nvim", config = 'require("zen-mode-config")'}
     use {"folke/twilight.nvim", config = "require('twilight-config')"}
     use {'andweeb/presence.nvim', config = "require('presence-config')"}
+    -- solidity plugins
+    use {'tomlion/vim-solidity'}
   end,
   config = {
     display = {

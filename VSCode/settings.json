@@ -116,5 +116,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.guides.indentation": false,
   "window.zoomLevel": 1,
-  "gitlens.defaultDateShortFormat": null
+  "gitlens.defaultDateShortFormat": null,
+  "workbench.editor.enablePreview": false,
+  "diffEditor.renderSideBySide": false
 }

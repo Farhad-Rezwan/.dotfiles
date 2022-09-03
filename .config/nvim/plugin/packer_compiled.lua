@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -39,7 +42,6 @@ local function save_profiles(threshold)
     end
   end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -185,7 +187,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-ts-autotag", "nvim-ts-rainbow" },
+    after = { "nvim-ts-rainbow", "nvim-ts-autotag" },
     config = { "require('treesitter-config')" },
     loaded = false,
     needs_bufread = false,
@@ -213,8 +215,9 @@ _G.packer_plugins = {
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/Users/rezwan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/rezwan/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -262,6 +265,11 @@ _G.packer_plugins = {
     path = "/Users/rezwan/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
   },
+  ["vim-solidity"] = {
+    loaded = true,
+    path = "/Users/rezwan/.local/share/nvim/site/pack/packer/start/vim-solidity",
+    url = "https://github.com/tomlion/vim-solidity"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/rezwan/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -284,42 +292,42 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('lsp')
-time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('comment-config')
-time([[Config for nvim-comment]], false)
 -- Config for: twilight.nvim
 time([[Config for twilight.nvim]], true)
 require('twilight-config')
 time([[Config for twilight.nvim]], false)
--- Config for: neovim
-time([[Config for neovim]], true)
-vim.cmd('colorscheme rose-pine')
-time([[Config for neovim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require("zen-mode-config")
-time([[Config for zen-mode.nvim]], false)
 -- Config for: presence.nvim
 time([[Config for presence.nvim]], true)
 require('presence-config')
 time([[Config for presence.nvim]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-require('null-ls-config')
-time([[Config for null-ls.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require('toggleterm-config')
-time([[Config for toggleterm.nvim]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 require('lspsaga-config')
 time([[Config for lspsaga.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require('comment-config')
+time([[Config for nvim-comment]], false)
+-- Config for: neovim
+time([[Config for neovim]], true)
+vim.cmd('colorscheme rose-pine')
+time([[Config for neovim]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('null-ls-config')
+time([[Config for null-ls.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require("zen-mode-config")
+time([[Config for zen-mode.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require('toggleterm-config')
+time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('lsp')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\nQ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
@@ -336,19 +344,26 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'bufferline.nvim', 'which-key.nvim', 'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'bufferline.nvim', 'nvim-treesitter', 'which-key.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'staline.nvim', 'dashboard-nvim', 'indent-blankline.nvim', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)
